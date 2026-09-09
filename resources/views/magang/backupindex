@@ -1,0 +1,1133 @@
+{{-- {
+right: 10%;
+
+}
+.svg{
+    margin-top: -26%;
+}
+.button{
+
+      margin-top: 1%;
+}
+.container{
+    margin-top: 8%;
+}
+
+.h2{
+    margin-top: 8%;
+}
+    </style>
+</head>
+<body>
+   @if (session('success'))
+<div class="alert alert-success" style="position: relative; z-index: 10;">
+    {{ session('success') }}
+</div>
+@endif --}}
+
+
+{{-- diagram card --}}
+{{-- <div class="card-diagram">
+
+</div>
+ <header>
+    <ul>
+      <li><img src="{{ asset('magang/logopetro.png') }}" alt="logo" class="logo-petro"></li>
+      <li><img src="{{ asset('magang/dokumen.png') }}" alt="dokumen" width="20%" height="20%"  title="download-document-workflow" class="dokumen"></li>
+            <li><img src="{{ asset('magang/downloaddokumen.png') }}" alt="dokumen" width="20%" height="20%" class="img-fluid" title="FORM" class="dokument"></li>
+       <li><a href="{{ url('/Login') }}" class="button btn btn-secondary w-10 h-10">Login</a></li>
+    </ul>
+  </header> --}}
+   {{-- <header class="shadow-lg   bg-body-tertiary rounde" >
+    {{-- d-flex align-items-center justify-content-center p-3 --}}
+    {{-- <img src="{{ asset('magang/logopetro.png') }}" alt="logo" width="20%" height="20%" class="logo-petro">
+
+    <div class="d-flex ms-auto ">
+        <a href="#form" class="dokumen " >
+            <img src="{{ asset('magang/dokumen.png') }}" alt="dokumen" width="20%" height="20%" class="img-fluid" title="download-document-workflow">
+        </a> --}}
+
+    {{-- <div class="d-flex justify-content-start"> --}}
+
+
+  {{-- <a href="#form" class="downloaddokumen">
+            <img src="{{ asset('magang/downloaddokumen.png') }}" alt="dokumen" width="20%" height="20%" class="img-fluid" title="FORM">
+        </a> --}}
+
+    {{-- </div> --}}
+  {{-- <a href="{{ url('/Login') }}" type="submit" class="btn btn-success  " >Login</a> --}}
+ {{-- <a href="{{ url('/Login') }}" class="button btn btn-secondary w-10 h-10">Login</a>
+     </div>
+</header> --}}
+{{-- <div class="svg"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00FF00" fill-opacity="1" d="M0,224L40,240C80,256,160,288,240,282.7C320,277,400,235,480,224C560,213,640,235,720,250.7C800,267,880,277,960,256C1040,235,1120,181,1200,186.7C1280,192,1360,256,1400,288L1440,320L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> </div> --}}
+
+{{-- <div class="navbar">
+<nav class="nav">
+  <a class="nav-link active" href="#">Dasboard</a>
+  <a class="nav-link" href="http://127.0.0.1:8000/kuota">Kuota</a>
+  <a class="nav-link" href="#">Jurusan</a>
+
+</nav>
+</div> --}}
+{{-- DIAGRAM --}}
+
+
+    </div>
+
+    {{-- FORM --}}
+{{-- <div class="container mt-4">
+<h2 style="color: black;">Form Kebutuhan Magang</h2>
+
+
+
+<form action="{{ route('storeTabelPermintaan') }}" id="form" class="form" method="POST" enctype="multipart/form-data" name="form" onsubmit="return validateForm()">
+
+
+    @csrf
+
+    <div class="mb-3 mt-3">
+      <label for="niksap">NIK SAP</label>
+      <input type="text" maxlength="7" max="9999999" pattern="[0-9]{7}" class="form-control" id="niksap" placeholder="masukkkan nik sap" name="NIK_SAP">
+
+    </div>
+      <div class="mb-3 mt-3">
+      <label for="namamentor">Nama Mentor</label>
+      <input type="text" class="form-control" id="namamentor" placeholder="masukkkan nama mentor" name="Nama_Mentor">
+    </div>
+      <div class="mb-3 mt-3">
+      <label for="no_wa">No Wa Mentor</label>
+      <input type="number" maxlength="12" class="form-control" id="no_wa" placeholder="masukkkan No Wa Mentor" name="NO_WA_Mentor">
+    </div>
+    {{-- dropdown batch --}}
+    {{-- <div class="dropdown mb-3"> --}}
+
+
+
+  {{-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="batch" @error('Batch') is-invalid @enderror>
+    Batch
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="menu-batch" form-control>
+    <li><a class="dropdown-item" href="#">Batch 1 </a></li>
+    <li><a class="dropdown-item" href="#">Batch 2 </a></li>
+  </ul>
+   <input type="hidden" name="Batch" id="jenisbatch" required>
+     @error('Batch')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+</div> --}}
+
+
+{{-- <label>UnitKerja</label>
+<br>
+
+<input list="unitkerja" value="" class="col-sm-6 custom-select custom-select-sm" name="UnitKerja" placeholder="Pilih atau Ketik Unit Kerja">
+<datalist id="unitkerja">
+@foreach ( $data_unitkerja as $unitkerja )
+    <option value="{{ $unitkerja->UnitKerja }}">{{ $unitkerja->UnitKerja }}</option>
+
+@endforeach
+</datalist>
+ @error('UnitKerja')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+<br> --}}
+
+
+    {{-- dropdown unit kerja--}}
+    {{-- <div class="dropdown mb-3">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="unitkerja" @error('UnitKerja' )
+
+    Unit Kerja
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="menu-unitkerja">
+    <li><a class="dropdown-item" href="#">Dep Administrasi Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Dep Akuntansi Biaya</a></li>
+    <li><a class="dropdown-item" href="#">Dep Anggaran</a></li>
+        <li><a class="dropdown-item" href="#">Dep Audit Keuangan & Umun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Audit Operasi & Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Fabrikasi & Alat Berat</a></li>
+        <li><a class="dropdown-item" href="#">Dep Hukum</a></li>
+    <li><a class="dropdown-item" href="#">Dep Inovasi & Sistem Manajemen</a></li>
+    <li><a class="dropdown-item" href="#">Dep Inspeksi Teknik Rotating</a></li>
+        <li><a class="dropdown-item" href="#">Dep Teknik Statik</a></li>
+    <li><a class="dropdown-item" href="#">Dep Investasi Rutin & EPC</a></li>
+    <li><a class="dropdown-item" href="#">Dep Keamanan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Keselamatan & Kesehatan Kerja</a></li>
+    <li><a class="dropdown-item" href="#">Dep Akuntansi Biaya</a></li>
+    <li><a class="dropdown-item" href="#">Dep Keuangan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Komunikasi Korporat</a></li>
+    <li><a class="dropdown-item" href="#">Dep Laboratorium</a></li>
+    <li><a class="dropdown-item" href="#">Dep Lingkungan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Manajemen & Pengembangan SDM</a></li>
+    <li><a class="dropdown-item" href="#">Dep Manajemen Aset</a></li>
+    <li><a class="dropdown-item" href="#">Dep Mitra Bisnis Pemasaran Korporasi </a></li>
+        <li><a class="dropdown-item" href="#">Dep Mitra Bisnis Pemasaran Ritel</a></li>
+    <li><a class="dropdown-item" href="#">Dep Operasional SDM</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pelaporan Keuangan & Manajemen</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pelayanan Umun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pemelihara 1</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pemelihara 2</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pemelihara 3</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengadaan Barang</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengadaan Jasa</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pengelolaan Pelabuhan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengelolaan Persediaan Suku Cadang & BB</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengelolaan Transformasi Bisnis </a></li>
+        <li><a class="dropdown-item" href="#">Dep Pengembangan Korporat</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian TA</a></li>
+        <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pengadaan Barang/Jasa</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian TA</a></li>
+        <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pengadaan Barang/Jasa</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pergudangan & Pengantongan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Portofolio Bisnis</a></li>
+        <li><a class="dropdown-item" href="#">Dep Produksi 1 A</a></li>
+    <li><a class="dropdown-item" href="#">Dep Produksi 1 B</a></li>
+    <li><a class="dropdown-item" href="#">Dep produksi 2 B</a></li>
+    <li><a class="dropdown-item" href="#">Dep produksi 3 A</a></li>
+    <li><a class="dropdown-item" href="#">Dep Produksi 3 B</a></li>
+        <li><a class="dropdown-item" href="#">Dep Proses & Pengelolaan Energo</a></li>
+    <li><a class="dropdown-item" href="#">Dep Rancang Bangun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Reliability</a></li>
+    <li><a class="dropdown-item" href="#">Dep Riset</a></li>
+    <li><a class="dropdown-item" href="#">Dep Tanggung Jawab Sosial & Lingkungan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Teknik & Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Dep TKP & Manajemen Risiko</a></li>
+    <li><a class="dropdown-item" href="#">Persiapan Pryek Dermaga A</a></li>
+     <li><a class="dropdown-item" href="#">Persiapan Proyek Soda Ash</a></li>
+    <li><a class="dropdown-item" href="#">Projek Agrosolution</a></li>
+        <li><a class="dropdown-item" href="#">Proyek Barang Reject</a></li>
+    <li><a class="dropdown-item" href="#">Proyek Manajemen Produk Baru</a></li>
+    <li><a class="dropdown-item" href="#">Proyek Manajemen Pengelolaan Tagihan Bersama</a></li>
+     <li><a class="dropdown-item" href="#">Komp Administrasi Keuangan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Mitra Bisnis</a></li>
+        <li><a class="dropdown-item" href="#">Komp Mitra Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pabrik 1</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pabrik 2</a></li>
+     <li><a class="dropdown-item" href="#">Komp Pabrik 3</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pengelolaan Pergudangan & Pelabuhan</a></li>
+        <li><a class="dropdown-item" href="#">Komp Pengembangan & Portofolio Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Komp Perencanaan & Pengendalian Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Satuan Pengawasan Intern</a></li>\ <li><a class="dropdown-item" href="#">Dep Riset</a></li>
+    <li><a class="dropdown-item" href="#">Komp Sekretaris Perusahaan</a></li>
+        <li><a class="dropdown-item" href="#">Komp Sumber Daya Perusahaan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Teknik</a></li>
+    <li><a class="dropdown-item" href="#">Komp Umum</a></li>
+  </ul>
+    <input type="hidden" name="UnitKerja" id="jenisunitkerja" required>
+     @error('UnitKerja')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+</div> --}}
+
+ {{-- <div class="mb-3 mt-3">
+      <label for="bagian">Bagian</label>
+      <br>
+      <input type="text" class="form-control" id="bagian" placeholder="masukkkan Bagian" name="Bagian">
+    </div>
+<br> --}}
+{{-- <label>Jurusan</label>
+<br>  --}}
+ {{-- <input list="encodings" class="col-sm-6 custom-select custom-select-sm" name="Jurusan" placeholder="Pilih atau ketik jurusan" id="jurusan">
+<datalist id="encodings">
+    @foreach ($data_jurusan as $jurusan)
+        <option value="{{ $jurusan->Jurusan }}">{{ $jurusan->Jurusan }}</option>
+    @endforeach
+</datalist> --}}
+ {{-- <input type="text" id="search" class="form-control" placeholder="Cari jurusan...">
+
+
+
+ @error('Jurusan')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+
+ --}}
+
+
+
+
+  {{-- Input Judul PA --}}
+    {{-- <input type="hidden" name="Jurusan" id="jenisjurusan" required> --}}
+
+    {{-- <i onmouseover="alert('Kalau ada kebutuhan jurusan yang tidak ada pada list dibawah ini, silakan isi other/lainnya lalu isi dengan jurusan yang dibutuhkan')" class="fa-solid fa-circle-info"></i>
+    <br> --}}
+
+{{-- tahun --}}
+  {{-- <div class="mb-3 mt-3">
+  <label for="tahunmagang">Tahun Magang</label>
+  <input  class="form-control" type="number" placeholder="Masukkan Tahun Magang"  id="tahunmagang" name="tahunmagang" >
+  {{-- <input type="number"  class="form-control" id="tahunmagang" name="tahunmagang" placeholder="Masukkan Tahun"> --}}
+{{-- </div>  --}}
+
+   {{-- <div class="mb-3 mt-3">
+  <label for="PA">Judul Projek Akhir</label>
+<i onmouseover="info()" class="fa-solid fa-circle-info"></i>
+  <input type="text" class="form-control" id="PA" placeholder="masukkkan JUDUL PA" name="JudulPA">
+</div> --}}
+
+{{-- Workplan --}}
+{{--
+    <div class="mb-3">
+      <label for="pwd">Workplan:</label>
+      <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"class="form-control" id="workplan" placeholder="" name="FileExcel">
+    </div> --}}
+
+    {{-- radio button --}}
+ {{-- <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="tidakpilihradio" >
+  <label class="form-check-label" for="flexRadioDefault"> </label>
+</div> --}}
+
+{{-- <div class="form-check ">
+
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault" >
+  <label class="form-check-label" for="flexRadioDefault2"> Dengan ini saya Bersedia menjadi Mentor dan Membimbing Mahasiswa Yang Akan Terpilih Selama Program Magang Berjalan </label>
+
+</div> --}}
+
+     {{-- <button type="submit" class="btn btn-primary"  >Submit</button>
+  </form>
+  <footer class="footer">
+
+  </footer>
+</div> --}}
+{{-- <script>
+  const dropdownButtonUnit = document.getElementById('unitkerja'); // Variabel diubah namanya
+const dropdownItemsUnit = document.querySelectorAll('#unitkerja + .dropdown-menu .dropdown-item'); // Selektor diperbaiki
+dropdownItemsUnit.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonUnit.textContent = selectedCategory;
+        document.getElementById('jenisunitkerja').value = selectedCategory;
+    });
+});
+</script> --}}
+{{-- <script>
+  const dropdownButtonJurusan = document.getElementById('jurusan'); // Variabel diubah namanya
+const dropdownItemsJurusan = document.querySelectorAll('#jurusan + .dropdown-menu .dropdown-item'); // Selektor diperbaiki
+dropdownItemsJurusan.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonJurusan.textContent = selectedCategory;
+        document.getElementById('jenisjurusan').value = selectedCategory;
+    });
+});
+</script> --}}
+<script>
+  const dropdownButtonUnitBatch = document.getElementById('batch');
+const dropdownItemsUnitBatch = document.querySelectorAll('#batch + .dropdown-menu .dropdown-item');
+
+dropdownItemsUnitBatch.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonUnitBatch.textContent = selectedCategory;
+        document.getElementById('jenisbatch').value = selectedCategory;
+    });
+});
+
+function info(){
+    alert("Contoh Judul Project : Sistem Pendukung Keputusan dalam menentukan Karyawan terbaik menggunakan AHP dan Fuzzy Tsukamoto berbasis Web")
+}
+function infojurusan(){
+alert("Kalau ada kebutuhan jurusan yang tidak ada pada list dibawah ini, silakan isi other/lainnya lalu isi dengan jurusan yang dibutuhkan")
+}
+
+
+</script>
+
+{{-- <script>
+alert("{{ session('success') }}");
+
+</script> --}}
+
+<script>
+function validateForm() {
+    // Ambil semua radio button dengan name yang sama
+    const radios = document.getElementsByName('flexRadioDefault');
+    let formValid = false;
+
+    // Cek apakah ada yang dipilih
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            formValid = true;
+            break;
+        }
+    }
+
+
+
+    // Jika memilih radio dengan id "tidakpilihradio"
+    const tidakSetuju = document.getElementById('tidakpilihradio');
+    if (tidakSetuju.checked) {
+        alert("Mohon pilih salah satu opsi persetujuan terlebih dahulu.");
+        return false;
+    }
+
+    // Kalau memilih 'Setuju', form lanjut dikirim
+    return true;
+}
+</script>
+
+
+<script>
+     $(document).ready(function () {
+
+                $('#tahunmagang').datepicker({
+                    minViewMode: 'years',
+                    autoclose: true,
+                     format: 'yyyy'
+                });
+
+            });
+
+</script>
+<script>
+    const route = "{{ route('autocompleteJurusan') }}";
+
+    $(function () {
+        $("#search").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: route,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { search: request.term },
+                    success: function (dataJurusan) {
+                        response(dataJurusan);
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#search').val(ui.item.label);
+                console.log(ui.item);
+                return false;
+            },
+            minLength: 1
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+<!-- newww -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery  -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI (Autocomplete) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Bootstrap Datepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- SweetAlert + Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <style>
+      body {
+ /* background-color:#3f6d70  */
+
+  /* color: #333; */
+  /* min-height: 100vh; */
+   margin: 0;
+    padding: 0;
+background: #f2f2f2;
+
+
+
+    }
+    html {
+  scroll-behavior: smooth;
+}
+#clickform{
+
+}
+#form{
+
+}
+.logo-petro{
+position: static;
+    margin-top: -2%;
+     top: 8px;
+  left: 16px;
+  font-size: 20px;
+  z-index: 3;
+
+}
+.svg{
+      position: relative;
+  z-index: 2;
+    margin-top: -18%;
+}
+.button{
+    z-index: 3;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: green;
+    color: white;
+}
+header img {
+  border-radius: 8px;
+}
+.me-3{
+    z-index: 3;
+    /* right: 4%;
+    position: auto;
+    top: 8px;
+    right: 10px;
+    font-size: 10px; */
+
+}
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin: 15px auto;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+
+/* Logo kiri */
+.header-left img.logo-petro {
+  height: 80%;
+  width: 80%;
+}
+
+/* Gambar + tombol di kanan */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* jarak antar elemen */
+}
+
+.icon-header {
+  height: 45px;
+  width: auto;
+  /* cursor: pointer */
+  transition: transform 0.2s ease;
+}
+
+/* .icon-header:hover {
+  transform: scale(1.1);
+} */
+
+/* Tombol Login */
+.btn-login {
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-weight: 500;
+  background-color: #007bff;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #005fcc;
+}
+/* Ketinggian tetap (fixed height) dihilangkan agar card bisa memanjang sesuai isi */
+#doucment {
+
+}
+#form {
+
+}
+.navbar{
+    display: flex; /* Semicolon ditambahkan */
+    align-items: center;
+    justify-content: center;
+
+    margin-top:-6%;
+}
+.form{
+padding: 20px; /* Padding diubah dari -1px menjadi 20px agar ada ruang di dalam card */
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-top: 9%;
+}
+.dokumen{
+    position: relative;
+    top: 8px;
+    /* right: 20px; */
+    font-size: 20px;
+    z-index: 3;
+       margin-top: 4%;
+
+}
+.downloaddokumen{
+    position: relative;
+    top: 8px;
+    right: 80px;
+    font-size: 20px;
+    z-index: 3;
+    margin-top: 4%;
+}
+
+.documen{
+
+ left:  80%;
+}
+.download{
+right: 12%;
+
+}
+
+.button{
+
+      margin-top: 1%;
+
+}
+.container{
+    margin-top: 8%;
+}
+
+.h2{
+    margin-top: 8%;
+}
+.btn{
+    background-color: #007bff;
+    border-radius: 12%;
+    color: white;
+
+}
+.btn:hover {
+  background-color: #005fcc;
+}
+
+    </style>
+</head>
+<body>
+   @if (session('success'))
+<div class="alert alert-success" style="position: relative; z-index: 10;">
+    {{ session('success') }}
+</div>
+@endif
+
+
+{{-- diagram card --}}
+{{-- <div class="card-diagram">
+
+      <canvas id="myChart" height="100px"></canvas>
+</div> --}}
+ <header>
+  <!-- Logo di kiri -->
+  <div class="header-left">
+    <img src="{{ asset('magang/logopetro.png') }}" alt="logo" class="logo-petro" >
+  </div>
+
+  <!-- Kanan: gambar dokumen dan tombol login -->
+  <div class="header-right" >
+    <a href="#form">
+    <img src="{{ asset('magang/dokumen.png') }}" alt="dokumen" class="icon-header" title="Download Document" id="clickform">
+    </a>
+    <a>
+        <a href="{{ route('download.templateworkplan') }}">
+            <img src="{{ asset('magang/downloaddokumen.png') }}" alt="download" class="icon-header" title="Download Template Workplan">
+        </a>
+    </a>
+    {{-- <img src="{{ asset('magang/downloaddokumen.png') }}" alt="download" class="icon-header" title="Form Document"> --}}
+    {{-- <a href="{{ url('/Login') }}" class="btn btn-success btn-login">Login</a> --}}
+  </div>
+
+   {{-- <header class="shadow-lg   bg-body-tertiary rounde" >
+    {{-- d-flex align-items-center justify-content-center p-3 --}}
+    {{-- <img src="{{ asset('magang/logopetro.png') }}" alt="logo" width="20%" height="20%" class="logo-petro">
+
+    <div class="d-flex ms-auto ">
+        <a href="#form" class="dokumen " >
+            <img src="{{ asset('magang/dokumen.png') }}" alt="dokumen" width="20%" height="20%" class="img-fluid" title="download-document-workflow">
+        </a> --}}
+
+    {{-- <div class="d-flex justify-content-start"> --}}
+
+
+  {{-- <a href="#form" class="downloaddokumen">
+            <img src="{{ asset('magang/downloaddokumen.png') }}" alt="dokumen" width="20%" height="20%" class="img-fluid" title="FORM">
+        </a> --}}
+
+    {{-- </div> --}}
+  {{-- <a href="{{ url('/Login') }}" type="submit" class="btn btn-success  " >Login</a> --}}
+ {{-- <a href="{{ url('/Login') }}" class="button btn btn-secondary w-10 h-10">Login</a>
+     </div>
+</header> --}}
+{{-- <div class="svg"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00FF00" fill-opacity="1" d="M0,224L40,240C80,256,160,288,240,282.7C320,277,400,235,480,224C560,213,640,235,720,250.7C800,267,880,277,960,256C1040,235,1120,181,1200,186.7C1280,192,1360,256,1400,288L1440,320L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> </div> --}}
+
+{{-- <div class="navbar">
+<nav class="nav">
+  <a class="nav-link active" href="#">Dasboard</a>
+  <a class="nav-link" href="http://127.0.0.1:8000/kuota">Kuota</a>
+  <a class="nav-link" href="#">Jurusan</a>
+
+</nav>
+</div> --}}
+{{-- DIAGRAM --}}
+
+
+    </div>
+
+    {{-- FORM --}}
+<div class="container mt-4">
+<h2 style="color: black;">Form Kebutuhan Magang</h2>
+
+
+
+<form action="{{ route('storeTabelPermintaan') }}"
+      id="form"
+      class="form"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="return validateForm()">
+
+
+
+    @csrf
+
+    <div class="mb-3 mt-3">
+      <label for="niksap">NIK SAP</label>
+      <input type="text" maxlength="7" max="9999999" pattern="[0-9]{7}" class="form-control" id="niksap" placeholder="masukkkan nik sap" name="NIK_SAP">
+
+    </div>
+      <div class="mb-3 mt-3">
+      <label for="namamentor">Nama Mentor</label>
+      <input type="text" class="form-control" id="namamentor" placeholder="masukkkan nama mentor" name="Nama_Mentor">
+      @error('Nama_Mentor')
+    <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+    </div>
+      <div class="mb-3 mt-3">
+      <label for="no_wa">No Wa Mentor</label>
+      <input type="number" maxlength="12" class="form-control" id="no_wa" placeholder="masukkkan No Wa Mentor" name="NO_WA_Mentor">
+    </div>
+    {{-- dropdown batch --}}
+    <div class="dropdown mb-3">
+
+
+
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="batch" @error('Batch') is-invalid @enderror>
+    Batch
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="menu-batch" form-control>
+    <li><a class="dropdown-item" href="#">Batch 1 </a></li>
+    <li><a class="dropdown-item" href="#">Batch 2 </a></li>
+  </ul>
+   <input type="hidden" name="Batch" id="jenisbatch" required>
+     @error('Batch')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+</div>
+
+
+<label>UnitKerja</label>
+<br>
+
+{{-- <input list="unitkerja" value="" class="col-sm-6 custom-select custom-select-sm" name="UnitKerja" placeholder="inputkan Nama Unit Kerja">
+<datalist id="unitkerja">
+@foreach ( $data_unitkerja as $unitkerja )
+    <option value="{{ $unitkerja->UnitKerja }}">{{ $unitkerja->UnitKerja }}</option>
+
+@endforeach
+</datalist> --}}
+ <input type="text" id="inputunitkerja" class="form-control" placeholder="inputkan Nama unitkerja" name="UnitKerja">
+
+
+ @error('UnitKerja')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+<br>
+
+
+    {{-- dropdown unit kerja--}}
+    {{-- <div class="dropdown mb-3">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="unitkerja" @error('UnitKerja' )
+
+    Unit Kerja
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="menu-unitkerja">
+    <li><a class="dropdown-item" href="#">Dep Administrasi Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Dep Akuntansi Biaya</a></li>
+    <li><a class="dropdown-item" href="#">Dep Anggaran</a></li>
+        <li><a class="dropdown-item" href="#">Dep Audit Keuangan & Umun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Audit Operasi & Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Fabrikasi & Alat Berat</a></li>
+        <li><a class="dropdown-item" href="#">Dep Hukum</a></li>
+    <li><a class="dropdown-item" href="#">Dep Inovasi & Sistem Manajemen</a></li>
+    <li><a class="dropdown-item" href="#">Dep Inspeksi Teknik Rotating</a></li>
+        <li><a class="dropdown-item" href="#">Dep Teknik Statik</a></li>
+    <li><a class="dropdown-item" href="#">Dep Investasi Rutin & EPC</a></li>
+    <li><a class="dropdown-item" href="#">Dep Keamanan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Keselamatan & Kesehatan Kerja</a></li>
+    <li><a class="dropdown-item" href="#">Dep Akuntansi Biaya</a></li>
+    <li><a class="dropdown-item" href="#">Dep Keuangan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Komunikasi Korporat</a></li>
+    <li><a class="dropdown-item" href="#">Dep Laboratorium</a></li>
+    <li><a class="dropdown-item" href="#">Dep Lingkungan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Manajemen & Pengembangan SDM</a></li>
+    <li><a class="dropdown-item" href="#">Dep Manajemen Aset</a></li>
+    <li><a class="dropdown-item" href="#">Dep Mitra Bisnis Pemasaran Korporasi </a></li>
+        <li><a class="dropdown-item" href="#">Dep Mitra Bisnis Pemasaran Ritel</a></li>
+    <li><a class="dropdown-item" href="#">Dep Operasional SDM</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pelaporan Keuangan & Manajemen</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pelayanan Umun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pemelihara 1</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pemelihara 2</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pemelihara 3</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengadaan Barang</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengadaan Jasa</a></li>
+        <li><a class="dropdown-item" href="#">Dep Pengelolaan Pelabuhan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengelolaan Persediaan Suku Cadang & BB</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pengelolaan Transformasi Bisnis </a></li>
+        <li><a class="dropdown-item" href="#">Dep Pengembangan Korporat</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian TA</a></li>
+        <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pengadaan Barang/Jasa</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian Produksi</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan & Pengendalian TA</a></li>
+        <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Perencanaan Pengadaan Barang/Jasa</a></li>
+    <li><a class="dropdown-item" href="#">Dep Pergudangan & Pengantongan</a></li>
+    <li><a class="dropdown-item" href="#">Dep Portofolio Bisnis</a></li>
+        <li><a class="dropdown-item" href="#">Dep Produksi 1 A</a></li>
+    <li><a class="dropdown-item" href="#">Dep Produksi 1 B</a></li>
+    <li><a class="dropdown-item" href="#">Dep produksi 2 B</a></li>
+    <li><a class="dropdown-item" href="#">Dep produksi 3 A</a></li>
+    <li><a class="dropdown-item" href="#">Dep Produksi 3 B</a></li>
+        <li><a class="dropdown-item" href="#">Dep Proses & Pengelolaan Energo</a></li>
+    <li><a class="dropdown-item" href="#">Dep Rancang Bangun</a></li>
+    <li><a class="dropdown-item" href="#">Dep Reliability</a></li>
+    <li><a class="dropdown-item" href="#">Dep Riset</a></li>
+    <li><a class="dropdown-item" href="#">Dep Tanggung Jawab Sosial & Lingkungan</a></li>
+        <li><a class="dropdown-item" href="#">Dep Teknik & Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Dep TKP & Manajemen Risiko</a></li>
+    <li><a class="dropdown-item" href="#">Persiapan Pryek Dermaga A</a></li>
+     <li><a class="dropdown-item" href="#">Persiapan Proyek Soda Ash</a></li>
+    <li><a class="dropdown-item" href="#">Projek Agrosolution</a></li>
+        <li><a class="dropdown-item" href="#">Proyek Barang Reject</a></li>
+    <li><a class="dropdown-item" href="#">Proyek Manajemen Produk Baru</a></li>
+    <li><a class="dropdown-item" href="#">Proyek Manajemen Pengelolaan Tagihan Bersama</a></li>
+     <li><a class="dropdown-item" href="#">Komp Administrasi Keuangan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Mitra Bisnis</a></li>
+        <li><a class="dropdown-item" href="#">Komp Mitra Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pabrik 1</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pabrik 2</a></li>
+     <li><a class="dropdown-item" href="#">Komp Pabrik 3</a></li>
+    <li><a class="dropdown-item" href="#">Komp Pengelolaan Pergudangan & Pelabuhan</a></li>
+        <li><a class="dropdown-item" href="#">Komp Pengembangan & Portofolio Bisnis</a></li>
+    <li><a class="dropdown-item" href="#">Komp Perencanaan & Pengendalian Pemeliharaan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Satuan Pengawasan Intern</a></li>\ <li><a class="dropdown-item" href="#">Dep Riset</a></li>
+    <li><a class="dropdown-item" href="#">Komp Sekretaris Perusahaan</a></li>
+        <li><a class="dropdown-item" href="#">Komp Sumber Daya Perusahaan</a></li>
+    <li><a class="dropdown-item" href="#">Komp Teknik</a></li>
+    <li><a class="dropdown-item" href="#">Komp Umum</a></li>
+  </ul>
+    <input type="hidden" name="UnitKerja" id="jenisunitkerja" required>
+     @error('UnitKerja')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+</div> --}}
+
+ <div class="mb-3 mt-3">
+      <label for="bagian">Bagian</label>
+      <br>
+      <input type="text" class="form-control" id="bagian" placeholder="masukkkan Bagian" name="Bagian">
+    </div>
+<br>
+<label>Jurusan</label>     <i onclick="alert('Kalau ada kebutuhan jurusan yang tidak ada pada list dibawah ini, silakan isi other/lainnya lalu isi dengan jurusan yang dibutuhkan')" class="fa-solid fa-circle-info"></i>
+
+<br>
+ {{-- <input list="encodings" class="col-sm-6 custom-select custom-select-sm" name="Jurusan" placeholder="Pilih atau ketik jurusan" id="jurusan">
+<datalist id="encodings">
+    @foreach ($data_jurusan as $jurusan)
+        <option value="{{ $jurusan->Jurusan }}">{{ $jurusan->Jurusan }}</option>
+    @endforeach
+</datalist> --}}
+ <input type="text" id="search" class="form-control" placeholder="inputkan Nama Jurusan" name="Jurusan">
+
+
+
+ @error('Jurusan')
+      <div class="invalid-feedback d-block">{{ $message }}</div>
+  @enderror
+
+
+
+
+
+
+  {{-- Input Judul PA --}}
+    {{-- <input type="hidden" name="Jurusan" id="jenisjurusan" required> --}}
+
+    {{-- <i onmouseover="alert('Kalau ada kebutuhan jurusan yang tidak ada pada list dibawah ini, silakan isi other/lainnya lalu isi dengan jurusan yang dibutuhkan')" class="fa-solid fa-circle-info"></i> --}}
+    <br>
+
+{{-- tahun --}}
+  <div class="mb-3 mt-3">
+  <label for="tahunmagang">Tahun Magang</label>
+  <input  class="form-control" type="text" placeholder="Masukkan Tahun Magang"  id="tahunmagang" name="tahunmagang" >
+  {{-- <input type="text"  class="form-control" id="tahunmagang" name="tahunmagang" placeholder="Masukkan Tahun"> --}}
+</div>
+
+   <div class="mb-3 mt-3">
+  <label for="PA">Judul Projek Akhir</label>
+<i onclick="info()" class="fa-solid fa-circle-info"></i>
+  <input type="text" class="form-control" id="PA" placeholder="masukkkan JUDUL PA" name="JudulPA">
+</div>
+
+{{-- Workplan --}}
+
+    <div class="mb-3">
+      <label for="pwd">Workplan:</label>
+      <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"class="form-control" id="workplan" placeholder="" name="file_excel">
+    </div>
+
+    {{-- radio button --}}
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="tidakpilihradio" >
+  <label class="form-check-label" for="flexRadioDefault"> </label>
+</div>
+
+<div class="form-check ">
+
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault" >
+  <label class="form-check-label" for="flexRadioDefault2"> Dengan ini saya Bersedia menjadi Mentor dan Membimbing Mahasiswa Yang Akan Terpilih Selama Program Magang Berjalan </label>
+
+</div>
+
+     <button type="submit" class="btn btn-primary"  >Submit</button>
+  </form>
+  <footer class="footer">
+
+  </footer>
+</div>
+{{-- <script>
+  const dropdownButtonUnit = document.getElementById('unitkerja'); // Variabel diubah namanya
+const dropdownItemsUnit = document.querySelectorAll('#unitkerja + .dropdown-menu .dropdown-item'); // Selektor diperbaiki
+dropdownItemsUnit.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonUnit.textContent = selectedCategory;
+        document.getElementById('jenisunitkerja').value = selectedCategory;
+    });
+});
+</script> --}}
+{{-- <script>
+  const dropdownButtonJurusan = document.getElementById('jurusan'); // Variabel diubah namanya
+const dropdownItemsJurusan = document.querySelectorAll('#jurusan + .dropdown-menu .dropdown-item'); // Selektor diperbaiki
+dropdownItemsJurusan.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonJurusan.textContent = selectedCategory;
+        document.getElementById('jenisjurusan').value = selectedCategory;
+    });
+});
+</script> --}}
+<script>
+  const dropdownButtonUnitBatch = document.getElementById('batch');
+const dropdownItemsUnitBatch = document.querySelectorAll('#batch + .dropdown-menu .dropdown-item');
+
+dropdownItemsUnitBatch.forEach(item => {
+    item.addEventListener('click', function() {
+        const selectedCategory = item.textContent;
+        dropdownButtonUnitBatch.textContent = selectedCategory;
+        document.getElementById('jenisbatch').value = selectedCategory;
+    });
+});
+
+function info(){
+    alert("Contoh Judul Project : Sistem Pendukung Keputusan dalam menentukan Karyawan terbaik menggunakan AHP dan Fuzzy Tsukamoto berbasis Web")
+}
+function infojurusan(){
+alert("Kalau ada kebutuhan jurusan yang tidak ada pada list dibawah ini, silakan isi other/lainnya lalu isi dengan jurusan yang dibutuhkan")
+}
+
+
+</script>
+
+{{-- <script>
+alert("{{ session('success') }}");
+
+</script> --}}
+
+<script>
+function validateForm() {
+    // Ambil semua radio button dengan name yang sama
+    const radios = document.getElementsByName('flexRadioDefault');
+    let formValid = false;
+
+    // Cek apakah ada yang dipilih
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            formValid = true;
+            break;
+        }
+    }
+
+
+
+    // Jika memilih radio dengan id "tidakpilihradio"
+    const tidakSetuju = document.getElementById('tidakpilihradio');
+    if (tidakSetuju.checked) {
+        alert("Mohon pilih salah satu opsi persetujuan terlebih dahulu.");
+        return false;
+    }
+
+    // Kalau memilih 'Setuju', form lanjut dikirim
+    return true;
+}
+</script>
+
+
+<script>
+ $('#tahunmagang').datepicker({
+    format: "yyyy",
+    minViewMode: 2,   // 2 = YEAR ONLY
+    autoclose: true
+});
+
+
+</script>
+{{-- <script>
+    const route = "{{ route('autocompleteJurusan') }}";
+
+    $(function () {
+        $("#search").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: route,
+                    type: 'GET',
+                    dataType: 'json',
+
+                    data: { search: request.term },
+                    success: function (dataJurusan) {
+                        response(dataJurusan);
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#search').val(ui.item.label);
+                console.log(ui.item);
+                return false;
+            },
+            minLength: 1
+        });
+    });
+</script> --}}
+
+
+{{-- autocomplete New --}}
+<script>
+    const route = "{{ route('autocompleteJurusan') }}";
+
+    $(function () {
+        $("#search").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: route,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { search: request.term },
+                    success: function (dataJurusan) {
+                        response(dataJurusan);
+                    }
+                });
+            },
+
+            select: function (event, ui) {
+                // Jika data tidak ditemukan (id = null)
+                if (ui.item.id === null) {
+                    $('#search').val(""); // kosongkan input
+                    return false;
+                }
+
+                // Jika data ditemukan
+                $('#search').val(ui.item.value);
+                return false;
+            },
+
+            focus: function (event, ui) {
+                // Mencegah ganti value saat hover
+                return false;
+            },
+
+            minLength: 1
+        });
+    });
+</script>
+
+<script>
+    const routeunitkerja = "{{ route('autocompleteUnitkerja') }}";
+
+    $(function () {
+        $("#inputunitkerja").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: routeunitkerja,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { inputunitkerja: request.term },
+                    success: function (dataUnitkerja) {
+                        response(dataUnitkerja);
+                    }
+                });
+            },
+            select: function (event, ui) {
+              if (ui.item.id === null) {
+                $('#inputunitkerja').val("");
+                return false;
+              }
+              $('#inputunitkerja').val(ui.item.value)
+              return false;
+            },
+            focus: function (event, ui) {
+                return false;
+            },
+            minLength: 1
+        });
+    });
+</script>
+
+</body>
+
+
+ </html>
+

@@ -1,0 +1,63 @@
+public function storeTabelPermintaan(Request $request)
+{
+    $request->validate([
+        'NIK_SAP' => 'required|min:1',
+       'Nama_Mentor' => [
+    'required',
+    'min:1',
+    new ValidationNamaMentor($request->UnitKerja, $request->Nama_Mentor),
+],
+
+
+        'NO_WA_Mentor' => 'required|min:1',
+        'Batch' => 'required|min:1',
+         'tahunmagang' => 'required|min:4', // tambahkan field tahun
+        'UnitKerja' => [
+            'required',
+            'min:1',
+            new Validationkuota($request->UnitKerja,$request->tahunmagang,  $request->Batch,   // tambahkan ID_Jurusan
+            ),
+        ],
+        // Jurusan
+
+        'Bagian' => 'required|min:1',
+        'JudulPA' => 'required|min:1',
+     'Jurusan' => [
+            'required',
+            'min:1',
+            new ValidationJurusan($request->ID_Jurusan, $request->Jurusan),
+        ],
+
+          'CekData' => 'required|file|mimes:xlsx,xls|max:2048',
+          'status' => 'required|min:1',
+    ]);
+
+     // Upload file ke folder public/uploads/excel
+     $file = $request->file('CekData');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+  $file->move(public_path('fileexcel'), $namaFile);
+
+
+    // Jika lolos validasi kuota → simpan data
+    TabelPermintaan::create([
+        'NIK_SAP' => $request->NIK_SAP,
+        'Nama_Mentor' => $request->Nama_Mentor,
+        'NO_WA_Mentor' => $request->NO_WA_Mentor,
+        'Batch' => $request->Batch,
+         'tahunmagang' => $request->tahunmagang,
+        'UnitKerja' => $request->UnitKerja,
+        'Bagian' => $request->Bagian,
+        'JudulPA' => $request->JudulPA,
+         'Jurusan' => $request->Jurusan,
+        'CekData' => $namaFile,
+        'status' => $request->status,
+    ]);
+
+// return redirect('/Webmagang')
+//     ->with('success', 'Selamat Permintaan Magang Anda Terkirim, Silahkan Kembali Ke Dashboard')
+    // Kembali ke halaman form dengan pesan sukses
+    // return redirect()->back()->with('success', ' Permintaan Magang Anda berhasil dikirim!');
+ return redirect()->route('tabelpermintaan.IndexAdmin')
+    ->with('success', 'Selamat Permintaan Magang Anda Terkirim');
+
+}

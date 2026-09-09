@@ -1,0 +1,83 @@
+public function storeTabelPermintaan(Request $request)
+{
+    // Validasi input form
+    $request->validate([
+        'NIK_SAP' => 'required|numeric|digits:7',
+        'Nama_Mentor' => [
+            'required',
+            'string',
+            'min:3',
+            new ValidationNamaMentor($request->UnitKerja, $request->Nama_Mentor)
+        ],
+        'NO_WA_Mentor' => 'required|string|min:10|max:15',
+        'Batch' => 'required|string|in:Batch 1,Batch 2',
+        'tahunmagang' => 'required|numeric|digits:4',
+        'UnitKerja' => [
+            'required',
+            'string',
+            new Validationkuota($request->UnitKerja, $request->tahunmagang, $request->Batch)
+        ],
+        'Bagian' => 'required|string|min:3',
+        'Jurusan' => [
+            'required',
+            'string',
+            new ValidationJurusan(null, $request->Jurusan)
+        ],
+        'JudulPA' => 'required|string|min:10',
+
+        // GANTI FileExcel -> file_excel
+        'file_excel' => 'required|file|mimes:xlsx,xls|max:2048',
+
+        'flexRadioDefault' => 'required|in:on'
+    ]);
+
+    // Cek radio button
+    if (!$request->has('flexRadioDefault') || $request->flexRadioDefault !== 'on') {
+        return back()->withErrors(['flexRadioDefault' => 'Anda harus menyetujui untuk menjadi mentor.']);
+    }
+
+    // Upload file excel
+    $namaFile = null;
+    if ($request->hasFile('file_excel')) {
+
+        $file = $request->file('file_excel');
+        $namaFile = time().'_'.preg_replace('/\s+/', '_', $file->getClientOriginalName());
+
+        $file->move(public_path('fileexcel'), $namaFile);
+    } else {
+        return back()->withErrors(['file_excel' => 'File Excel wajib diupload.']);
+    }
+
+    // Simpan data ke DB
+    try {
+        $data = TabelPermintaan::create([
+            'NIK_SAP' => $request->NIK_SAP,
+            'Nama_Mentor' => $request->Nama_Mentor,
+            'NO_WA_Mentor' => $request->NO_WA_Mentor,
+            'Batch' => $request->Batch,
+            'tahunmagang' => $request->tahunmagang,
+            'UnitKerja' => $request->UnitKerja,
+            'Bagian' => $request->Bagian,
+            'Jurusan' => $request->Jurusan,
+            'JudulPA' => $request->JudulPA,
+
+            // GANTI CekData -> file_excel
+            'file_excel' => $namaFile,
+
+            'status' => 'pending'
+        ]);
+
+        return redirect()->route('Webmagang')
+            ->with('success', 'Selamat! Permintaan Magang Berhasil Dikirim. ID: '.$data->id);
+
+    } catch (\Exception $e) {
+
+        if ($namaFile && file_exists(public_path('fileexcel/'.$namaFile))) {
+            unlink(public_path('fileexcel/'.$namaFile));
+        }
+
+        return back()->withErrors([
+            'error' => 'Gagal menyimpan data: '.$e->getMessage()
+        ]);
+    }
+}
