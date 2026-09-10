@@ -87,7 +87,7 @@
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#cekstatus">Cek Status</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#kontak">Kontak</a></li>
             </ul>
-            <a href="{{ url('/') }}" class="btn btn-light btn-sm ms-3 fw-bold">Ajukan Permintaan</a>
+            <a href="{{ url('/formmagang') }}" class="btn btn-light btn-sm ms-3 fw-bold">Ajukan Permintaan</a>
         </div>
     </div>
 </nav>

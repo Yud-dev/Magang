@@ -74,6 +74,10 @@ Route::get('/scannercam', function () {
     return view('Scanner.ScannerCam');
 });
 
+Route::get('/formmagang', function () {
+    return view('magang.index');
+});
+
 
 
 // Route::get('/tabel1', function () {
