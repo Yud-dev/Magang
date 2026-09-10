@@ -8,7 +8,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\QRCODEController;
 use App\Http\Controllers\TabelController;
-use App\Http\Controllers\KebutuhanMagangcontroller;
+use App\Http\Controllers\KebutuhanMagangController;
 
 use Illuminate\Support\Facades\Auth;
 Route::get('/Welcome', function () {
@@ -159,15 +159,15 @@ Route::get('/deleteunitkerja/{id}', [KebutuhanMagangController::class, 'destroyu
 // Route::get('/tambahkuota', [KebutuhanMagangController::class, 'Createkuotamagang'])->name('kuotamagang.Createkuotamagang');
 Route::post('/storekuota', [KebutuhanMagangController::class, 'storekuotamagang'])->name('kuotamagang.storekuotamagang');
 // Route::get('/editkuota/{id}', [KebutuhanMagangController::class, 'editkuota'])->name('kuota.editkuota')
-Route::put('/updatekuota/{id}',[KebutuhanMagangcontroller::class, 'updatekuota'])->name('kuota.updatekuota');
+Route::put('/updatekuota/{id}',[KebutuhanMagangController::class, 'updatekuota'])->name('kuota.updatekuota');
 // Route::get('/deletekuota/{id}', [KebutuhanMagangController::class, 'destroykuota'])->name('kuota.destroykuota')
 Route::delete('/deletekuota/{id}', [KebutuhanMagangController::class, 'destroykuota'])->name('kuota.destroykuota');
- Route::get('/statuspermintaan', [KebutuhanMagangcontroller::class, 'statuspermintaan'])->name('status.permintaan');
+ Route::get('/statuspermintaan', [KebutuhanMagangController::class, 'statuspermintaan'])->name('status.permintaan');
 Route::get('/cekdata', function () {
     return view('magang.cekdata');
 });
-Route::post('/status/login', [KebutuhanMagangcontroller::class, 'processStatusLogin'])->name('status.login.process');
-Route::get('/status/login', [KebutuhanMagangcontroller::class, 'processStatusLogin'])->name('status.login.process');
+Route::post('/status/login', [KebutuhanMagangController::class, 'processStatusLogin'])->name('status.login.process');
+Route::get('/status/login', [KebutuhanMagangController::class, 'processStatusLogin'])->name('status.login.process');
 
 // Jurusan
 // Route::get('/Jurusan', [KebutuhanMagangController::class, 'Jurusan'])->name('jurusan.Jurusan');
@@ -189,7 +189,7 @@ Route::get('/statusrequestuser/{nik_sap}',
 )->name('datapermintaan.statuspermintaan');
 
 // Ganti 'indexlogin' menjadi 'login'
-Route::get('/Login', [KebutuhanMagangcontroller::class,'indexlogin'])->name('login');
+Route::get('/Login', [KebutuhanMagangController::class,'indexlogin'])->name('login');
 Route::post('/storeLogin', [KebutuhanMagangController::class,'storeLogin'])->name('storelogin');
 
 //  Route::get('/Admin', function () {
@@ -208,7 +208,7 @@ Route::get('/autocompletenamamentor', [KebutuhanMagangController::class, 'autoco
   Route::get('/statuspermintaan',[KebutuhanMagangController::class, 'statuspermintaan'])->name('status.permintaan');
 //   Route::get('/statuspermintaan',[KebutuhanMagangController::class, 'statuspermintaan'])->name('status.permintaan');
 // middleware
-Route::get('/loginstatus', [KebutuhanMagangcontroller::class, 'LoginStatus'])->name('status.login');
+Route::get('/loginstatus', [KebutuhanMagangController::class, 'LoginStatus'])->name('status.login');
 Route::middleware(['auth'])->group(function () {
 
 Route::get('/statusrequestuser/{nik_sap}',
