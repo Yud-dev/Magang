@@ -85,7 +85,7 @@ class KebutuhanMagangController extends Controller
     {
 
 
-        return view('magang.Login');
+        return view('magang.login');
     }
 //     public function storelogin(Request $request)
 //     {
